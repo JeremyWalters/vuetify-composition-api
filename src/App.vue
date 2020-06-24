@@ -23,26 +23,34 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <v-content>
-      <HelloWorld />
-    </v-content>
+    <side-navigation></side-navigation>
+
+    <v-main>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
+import SideNavigation from "./components/navigation/SideNavigation.vue";
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   name: "App",
   components: {
     HelloWorld,
+    SideNavigation,
   },
   setup() {
     return {};
